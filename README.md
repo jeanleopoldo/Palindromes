@@ -1,3 +1,3 @@
 # Palindromes
 
-Just need to run in any IDE or execute the JAR file.
+Just need to run in any IDE or download and execute the JAR file.
