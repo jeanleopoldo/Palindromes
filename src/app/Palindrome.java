@@ -1,5 +1,7 @@
 package app;
 
+import javax.swing.JOptionPane;
+
 public class Palindrome {
 
 	public Palindrome() {
@@ -8,14 +10,14 @@ public class Palindrome {
 
 	public void run() {
 
-		String text = "socorram me subi no onibus em marrocos";
+		String text = JOptionPane.showInputDialog("Insert text");
 		String treatedText = treatInvalidCharactere(text);
-		System.out.println(checkIfPalindrome(treatedText));
+		JOptionPane.showMessageDialog(null, checkIfPalindrome(treatedText));
+		run();
 	}
 
 	private boolean checkIfPalindrome(String text) {
 
-		// String treated = treatInvalidCharactere(text);
 		char[] letters = getLetters(text);
 		char[] backwards = getBackwards(letters);
 
@@ -28,11 +30,11 @@ public class Palindrome {
 	}
 
 	private char[] getLetters(String text) {
+
 		char[] letters = new char[text.length()];
 
 		for (int i = 0; i < letters.length; i++) {
 			letters[i] = text.charAt(i);
-
 		}
 
 		return letters;
@@ -52,8 +54,8 @@ public class Palindrome {
 	}
 
 	public String treatInvalidCharactere(String txt) {
+		
 		String treated = txt;
-		System.out.println(treated);
 
 		treated = treated.replace("!", "");
 		treated = treated.replace("?", "");
@@ -70,8 +72,6 @@ public class Palindrome {
 		treated = treated.replace("{", "");
 		treated = treated.replace("}", "");
 
-		System.out.println(treated);
 		return treated;
 	}
-
 }
