@@ -1,24 +1,24 @@
 package app;
 
 public class Palindrome {
-	
+
 	Text text_;
-	
+
 	public Palindrome() {
 		this.text_ = new Text();
 	}
 
 	public void run() {
 
-		String text  = this.text_.getText();
+		String text = "socorrammesubinoonibusemmarrocos";
+		//System.out.println(treatInvalidCharactere(text));
 		System.out.println(checkIfPalindrome(text));
 	}
 
 	private boolean checkIfPalindrome(String text) {
-		
-		//char[] letters = getLetters(text);
-		
-		char[]letters = treatInvalidCharactere(text);
+
+		// String treated = treatInvalidCharactere(text);
+		char[] letters = getLetters(text);
 		char[] backwards = getBackwards(letters);
 
 		for (int i = 0; i < letters.length; i++) {
@@ -54,22 +54,12 @@ public class Palindrome {
 		return lettersBackwards;
 	}
 
-	public char[] treatInvalidCharactere(String txt) {
+	public boolean treatInvalidCharactere(String txt) {
 
-		char[] letters = new char[txt.length()];
-		char c;
-		String tr = "";
-
-		for (int i = 0; i < txt.length(); i++) {
-			c = txt.charAt(i);
-			
-			if (txt == "'" || txt == "!" || txt == "|" || txt == "," || txt == "." || txt == ":" || txt == ";"
-					|| txt == "[" || txt == "]" || txt == "{" || txt == "}" || txt == "-" || txt == "?") {
-				letters[i] = tr.charAt(0);
-			} else {
-				letters[i] = txt.charAt(i);
-			}
-		}
-		return letters;
+		String teste = "mesu";
+		String t = "";
+	
+		return false;
 	}
+
 }
