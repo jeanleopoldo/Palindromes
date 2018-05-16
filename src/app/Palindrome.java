@@ -2,17 +2,15 @@ package app;
 
 public class Palindrome {
 
-	Text text_;
-
 	public Palindrome() {
-		this.text_ = new Text();
+
 	}
 
 	public void run() {
 
-		String text = "socorrammesubinoonibusemmarrocos";
-		//System.out.println(treatInvalidCharactere(text));
-		System.out.println(checkIfPalindrome(text));
+		String text = "socorram me subi no onibus em marrocos";
+		String treatedText = treatInvalidCharactere(text);
+		System.out.println(checkIfPalindrome(treatedText));
 	}
 
 	private boolean checkIfPalindrome(String text) {
@@ -26,7 +24,6 @@ public class Palindrome {
 				return false;
 			}
 		}
-
 		return true;
 	}
 
@@ -54,12 +51,27 @@ public class Palindrome {
 		return lettersBackwards;
 	}
 
-	public boolean treatInvalidCharactere(String txt) {
+	public String treatInvalidCharactere(String txt) {
+		String treated = txt;
+		System.out.println(treated);
 
-		String teste = "mesu";
-		String t = "";
-	
-		return false;
+		treated = treated.replace("!", "");
+		treated = treated.replace("?", "");
+		treated = treated.replace(" ", "");
+		treated = treated.replace(",", "");
+		treated = treated.replace(".", "");
+		treated = treated.replace(":", "");
+		treated = treated.replace(";", "");
+		treated = treated.replace("-", "");
+		treated = treated.replace("=", "");
+		treated = treated.replace("'", "");
+		treated = treated.replace("[", "");
+		treated = treated.replace("]", "");
+		treated = treated.replace("{", "");
+		treated = treated.replace("}", "");
+
+		System.out.println(treated);
+		return treated;
 	}
 
 }
