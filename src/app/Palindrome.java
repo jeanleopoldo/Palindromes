@@ -1,24 +1,17 @@
 package app;
 
-import javax.swing.JOptionPane;
-
 public class Palindrome {
 
 	public Palindrome() {
-
+		new View(this);
 	}
 
-	public void run() {
+	public boolean checkIfPalindrome(String text) {
 
-		String text = JOptionPane.showInputDialog("Insert text");
-		String treatedText = treatInvalidCharactere(text);
-		JOptionPane.showMessageDialog(null, checkIfPalindrome(treatedText));
-		run();
-	}
-
-	private boolean checkIfPalindrome(String text) {
-
-		char[] letters = getLetters(text);
+		String treatedText = this.treatInvalidCharactere(text);
+		treatedText.toLowerCase();
+		
+		char[] letters = getLetters(treatedText);
 		char[] backwards = getBackwards(letters);
 
 		for (int i = 0; i < letters.length; i++) {
@@ -40,7 +33,7 @@ public class Palindrome {
 		return letters;
 	}
 
-	public char[] getBackwards(char[] letters) {
+	private char[] getBackwards(char[] letters) {
 
 		char[] lettersBackwards = new char[letters.length];
 		int j = letters.length - 1;
@@ -53,7 +46,7 @@ public class Palindrome {
 		return lettersBackwards;
 	}
 
-	public String treatInvalidCharactere(String txt) {
+	private String treatInvalidCharactere(String txt) {
 		
 		String treated = txt;
 
